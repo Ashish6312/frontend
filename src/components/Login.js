@@ -18,7 +18,7 @@ function Login({ setLoggedInUser }) {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post('https://investmentapp-s4i1.onrender.com/api/auth/login', form);
+      const res = await axios.post('http://localhost:5000/api/auth/login', form); // Fixed URL
 
       if (res.data.user) {
         // Save user data to localStorage

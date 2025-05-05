@@ -37,7 +37,7 @@ function Register() {
 
   const checkUsernameAvailability = async () => {
     try {
-      const res = await axios.post('https://investmentapp-s4i1.onrender.com/api/auth/check-username', {
+      const res = await axios.post('http://localhost:5000/api/auth/check-username', {
         username: form.username,
       });
       if (!res.data.available) {
@@ -65,7 +65,7 @@ function Register() {
 
     try {
       // Send registration data to the server
-      const res = await axios.post('https://investmentapp-s4i1.onrender.com/api/auth/register', form);
+      const res = await axios.post('http://localhost:5000/api/auth/register', form);
 
       alert(res.data.msg);
       navigate('/login');
