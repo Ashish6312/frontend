@@ -1,0 +1,349 @@
+/* General Home Page Styling */
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.home h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 6px;
+  z-index: 1000;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: #4CAF50;
+  transition: width 0.05s linear;
+}
+
+.toast-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+}
+
+/* Wallet Section */
+.wallet-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 18px 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wallet-section p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.toggle-wallet-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 15px;
+}
+
+.add-funds-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-funds-btn:hover {
+  background-color: #45a049;
+}
+
+/* Wallet Animation */
+.wallet-update-animation {
+  animation: pulseGreen 1s ease-in-out;
+}
+
+@keyframes pulseGreen {
+  0% { color: inherit; transform: scale(1); }
+  50% { color: #4CAF50; transform: scale(1.05); }
+  100% { color: inherit; }
+}
+
+/* Loading Indicator */
+.loader {
+  text-align: center;
+  margin: 25px 0;
+  font-style: italic;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Options Section */
+.options-section {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.options-section button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.options-section button:hover {
+  background-color: #2980b9;
+}
+
+/* Tab Section */
+.tab-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.tab-section button {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 12px 30px;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.tab-section button.active {
+  background-color: #fff;
+  border-bottom: 4px solid #3498db;
+  color: #3498db;
+}
+
+.tab-section button:hover:not(.active) {
+  background-color: #e9e9e9;
+}
+
+/* Plans Section */
+/* Plans Section */
+.plans-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.plan-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.plan-card h4 {
+  color: #333;
+  margin-top: 0;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+}
+
+.plan-card p {
+  color: #666;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.plan-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Space between image and text */
+}
+
+.plan-card button {
+  background-color: #009688;
+  color: white;
+  font-size: 1rem;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.plan-card button:hover {
+  background-color: #00796b;
+}
+
+.plan-card button:focus {
+  outline: none;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
+/* Modal Styles */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.btn-cancel {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  color: #333;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 48%;
+}
+
+.btn-confirm {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 48%;
+}
+
+.btn-cancel:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-confirm:hover {
+  background-color: #45a049;
+}
+
+/* Confirmation Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmation-modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.confirmation-modal h3 {
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.plan-details {
+  background-color: #f8f8f8;
+  padding: 18px;
+  border-radius: 6px;
+  margin: 18px 0;
+}
+
+.plan-details p {
+  margin: 8px 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .plans-section {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .wallet-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .add-funds-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .plans-section {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-section button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .toast {
+    width: calc(100% - 40px);
+    right: 20px;
+  }
+}

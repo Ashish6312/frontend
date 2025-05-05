@@ -1,0 +1,73 @@
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  top: 80px;
+  height: 10px;
+  background-color: #333;
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 280px;
+  max-width: 90%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInUp 0.4s ease;
+  overflow: hidden;
+}
+
+.toast p {
+  margin: 0;
+  flex: 1;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.toast-progress {
+  height: 4px;
+  background-color: #4caf50;
+  border-radius: 0 0 8px 8px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.toast-close {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.toast-close:hover {
+  transform: scale(1.2);
+  color: #ff5252; /* Change color on hover */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
