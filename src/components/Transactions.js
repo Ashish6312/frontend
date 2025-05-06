@@ -7,7 +7,7 @@ import { useUser } from '../context/UserContext';
 import io from 'socket.io-client'; // Import socket.io-client
 
 // Create socket connection
-const socket = io('http://localhost:5000');
+const socket = io('http://13.235.86.32:5000');
 
 function Transactions() {
   const { user, setUser } = useUser();
@@ -77,7 +77,7 @@ function Transactions() {
     
     setIsLoading(true);
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/transactions/${user.phone}`);
+      const response = await axios.get(`http://13.235.86.32:5000/api/auth/transactions/${user.phone}`);
       const allTransactions = response.data.transactions;
       
       // Apply filter if needed
@@ -176,7 +176,7 @@ function Transactions() {
     }
   
     try {
-      const orderRes = await axios.post('http://localhost:5000/api/auth/create-order', { amount });
+      const orderRes = await axios.post('http://13.235.86.32:5000/api/auth/create-order', { amount });
   
       const options = {
         key: 'rzp_test_tCkC2xdxoDsNsP', // Store key in .env file
@@ -187,7 +187,7 @@ function Transactions() {
         order_id: orderRes.data.id,
         handler: async function (response) {
           try {
-            const verifyRes = await axios.post('http://localhost:5000/api/auth/verify-payment', {
+            const verifyRes = await axios.post('http://13.235.86.32:5000/api/auth/verify-payment', {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
@@ -243,7 +243,7 @@ function Transactions() {
     setToastMessage(`You will be charged ₹${withdrawalFee.toFixed(2)} as withdrawal fee. You will receive ₹${amountToUser.toFixed(2)}.`);
   
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/transaction/withdraw', {
+      const response = await axios.post('http://13.235.86.32:5000/api/auth/transaction/withdraw', {
         phone: user.phone,
         amount: amount,  // Send the full amount to deduct from the wallet
         transactionPassword,

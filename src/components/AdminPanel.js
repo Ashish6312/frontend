@@ -56,7 +56,8 @@ const AdminPanel = () => {
 
   const fetchPlans = async (token) => {
     try {
-      const res = await axios.get('http://localhost:5000/api/plans', {
+
+      const res = await axios.get('http://13.235.86.32:5000/api/plans', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setPlans(res.data);
@@ -108,10 +109,10 @@ const AdminPanel = () => {
       };
 
       if (editingPlan) {
-        await axios.put(`http://localhost:5000/api/plans/${editingPlan._id}`, formData, config);
+        await axios.put(`http://13.235.86.32:5000/api/plans/${editingPlan._id}`, formData, config);
         setMessage('Plan updated successfully!');
       } else {
-        await axios.post('http://localhost:5000/api/plans', formData, config);
+        await axios.post('http://13.235.86.32:5000/api/plans', formData, config);
         setMessage('Plan added successfully!');
       }
 
@@ -144,14 +145,14 @@ const AdminPanel = () => {
       image: null
     });
     setEditingPlan(plan);
-    setPreviewImage(plan.image ? `http://localhost:5000${plan.image}` : null);
+    setPreviewImage(plan.image ? `http://13.235.86.32:5000${plan.image}` : null);
     setMessage('');
   };
 
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem('adminToken');
-      await axios.delete(`http://localhost:5000/api/plans/${id}`, {
+      await axios.delete(`http://13.235.86.32:5000/api/plans/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage('Plan deleted successfully!');
@@ -223,7 +224,7 @@ const AdminPanel = () => {
             <p>Type: {plan.planType}</p>
             {plan.image && (
               <img
-  src={`http://localhost:5000${plan.image}`}
+  src={`http://13.235.86.32:5000${plan.image}`}
   alt={plan.name}
   style={{ width: '100px', height: '100px', objectFit: 'cover' }}
 />

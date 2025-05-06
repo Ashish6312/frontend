@@ -37,16 +37,19 @@ function Register() {
 
   const checkUsernameAvailability = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/check-username', {
+      const res = await axios.post('http://13.235.86.32:5000/api/auth/check-username', {
         username: form.username,
       });
-      if (!res.data.available) {
+      if (res.data.msg === 'Username is already taken') {
         setUsernameError('Username is already taken');
+      } else {
+        setUsernameError('');
       }
     } catch (err) {
       console.error(err);
     }
   };
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -58,14 +61,11 @@ function Register() {
     }
 
     // Check if username is valid
-    if (usernameError) {
-      alert('Please choose a different username');
-      return;
-    }
+
 
     try {
       // Send registration data to the server
-      const res = await axios.post('http://localhost:5000/api/auth/register', form);
+      const res = await axios.post('http://13.235.86.32:5000/api/auth/register', form);
 
       alert(res.data.msg);
       navigate('/login');

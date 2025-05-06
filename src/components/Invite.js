@@ -11,7 +11,7 @@ function Invite({ user }) {
     const fetchTeam = async () => {
       if (user?.inviteCode) {
         try {
-          const res = await axios.get(`http://localhost:5000/api/auth/profile/referrals/${user.inviteCode}`);
+          const res = await axios.get(`http://13.235.86.32:5000/api/auth/profile/referrals/${user.inviteCode}`);
           console.log('Fetched team data:', res.data.referrals); // Log the response to check the data structure
           setTeam(res.data.referrals); // Set the team data
         } catch (err) {

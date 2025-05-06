@@ -25,7 +25,7 @@ function Profile({ user }) {
 
   const updateBank = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/profile/update-bank', {
+      const res = await axios.post('http://13.235.86.32:5000/api/auth/profile/update-bank', {
         phone: user.phone,
         accountNumber,
         ifscCode: ifsc,
@@ -38,7 +38,7 @@ function Profile({ user }) {
 
   const changeLoginPass = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/profile/change-login-password', {
+      const res = await axios.post('http://13.235.86.32:5000/api/auth/profile/change-login-password', {
         phone: user.phone,
         oldPassword: oldPass,
         newPassword: newPass,
@@ -51,7 +51,7 @@ function Profile({ user }) {
 
   const changeWithdrawPass = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/profile/change-withdraw-password', {
+      const res = await axios.post('http://13.235.86.32:5000/api/auth/profile/change-withdraw-password', {
         phone: user.phone,
         oldWithdrawPassword: oldWithdrawPass,
         newWithdrawPassword: newWithdrawPass,

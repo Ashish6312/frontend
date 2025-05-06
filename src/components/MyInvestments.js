@@ -11,7 +11,7 @@ const MyInvestments = ({ user }) => {
     const fetchInvestments = async () => {
       if (!userId) return;
       try {
-        const res = await axios.get(`http://localhost:5000/api/auth/investments/${userId}`);
+        const res = await axios.get(`http://13.235.86.32:5000/api/auth/investments/${userId}`);
         setInvestments(res.data);
       } catch (error) {
         console.error('Error fetching investments:', error);
@@ -37,7 +37,7 @@ const MyInvestments = ({ user }) => {
             <div key={i} className="investment-card">
               <h3>{inv.planName} ({inv.planType})</h3>
               {inv.image && (
-                <img src={`http://localhost:5000${inv.image}`} alt={inv.planName} style={{ width: '100px', height: '100px', objectFit: 'cover' }}/>
+                <img src={`http://13.235.86.32:5000${inv.image}`} alt={inv.planName} style={{ width: '100px', height: '100px', objectFit: 'cover' }}/>
               )}
               <p><strong>Invested Amount:</strong> ₹{inv.investedAmount}</p>
               <p><strong>Daily Income:</strong> ₹{inv.dailyIncome}</p>

@@ -6,7 +6,7 @@ import { useUser } from '../context/UserContext';
 import io from 'socket.io-client';
 import './Home.css';
 
-const socket = io('http://localhost:5000'); // Update if your backend runs on another port
+const socket = io('http://13.235.86.32:5000'); // Update if your backend runs on another port
 
 const Toast = ({ message, onClose }) => {
   const [progress, setProgress] = useState(100);
@@ -141,7 +141,7 @@ useEffect(() => {
   const fetchPlans = async () => {
     setLoading(true);
     try {
-      const res = await axios.get('http://localhost:5000/api/plans');
+      const res = await axios.get('http://13.235.86.32:5000/api/plans');
       setPlans(res.data);
     } catch (err) {
       console.error('Failed to fetch plans:', err);
@@ -157,7 +157,7 @@ useEffect(() => {
     const fetchUserData = async () => {
       if (user && user.id) {
         try {
-          const res = await axios.get(`http://localhost:5000/api/auth/user/${user.id}`);
+          const res = await axios.get(`http://13.235.86.32:5000/api/auth/user/${user.id}`);
           if (res.data) {
             const updatedUser = { ...user, wallet: res.data.wallet };
             setUser(updatedUser);
@@ -180,7 +180,7 @@ useEffect(() => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/purchases', {
+      const res = await axios.post('http://13.235.86.32:5000/api/purchases', {
         userId: user.id,
         planId: plan._id,
         planType: plan.planType,
@@ -271,7 +271,7 @@ useEffect(() => {
           <p>Daily Income: ₹{plan.dailyIncome}</p>
           {plan.image && (
             <img
-              src={`http://localhost:5000${plan.image}`}
+              src={`http://13.235.86.32:5000${plan.image}`}
               alt={plan.name}
               style={{ width: '100px', height: '100px', objectFit: 'cover' }}
             />
